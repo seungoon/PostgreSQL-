@@ -1,0 +1,13 @@
+前提条件：PostgreSQL 9.5以上であること！
+
+insert into films as ci
+ (code, title, kind)
+  values (
+    '1',
+    '11',
+    'a1'
+  )
+on conflict (code, title)　--ＰＫ項目しか使えない！
+do update set (kind) = ('a11')
+where ci.code = '4'
+      and ci.title = '4'
