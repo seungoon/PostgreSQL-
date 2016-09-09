@@ -1,0 +1,10 @@
+※各自DBのTIMEZONEを変更するSQL文：
+ALTER DATABASE XXX SET timezone TO 'UTC';
+->最後にDBをリフレッシュしてください。
+
+1.SQL->Get TIMEZONE FROM DB
+SELECT now() AT TIME ZONE 'UTC' AT TIME ZONE #{zoneId};
+変数の形："UTC+09:00"
+
+2.日本の場合、Convert to UTC
+SELECT TIMESTAMP '画面の日付(2016-09-09 10:00:00)' AT TIME ZONE 'UTC-09:00:00' 
