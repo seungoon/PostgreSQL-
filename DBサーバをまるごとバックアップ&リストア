@@ -1,0 +1,7 @@
+■バックアップ
+　#コマンド
+　C:\>pg_dumpall -f 20210406.sql -U postgres
+ 
+■リストア
+　#コマンド
+　C:\>psql -f 20210406.sql -U postgres
